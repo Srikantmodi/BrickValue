@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bangalore Price Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <!-- Make sure jQuery is loaded first -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+ 
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>BricValue RealEstimate</h1>
+      <p>Every Brick Counts - Predict Your Dream Home's Value with Data-Driven Accuracy</p>
+      <div class="hero-buttons">
+        <a href="#home" class="hero-btn" id="homeButton" aria-label="Go to Home Section">Home</a>
+        <a href="#predictor" class="hero-btn" id="predictorButton" aria-label="Go to Predictor Section">Predictor</a>
+        <a href="#news" class="hero-btn" id="newsButton" aria-label="Go to News Section">News</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Predictor Section -->
+  <section id="predictor" class="form-section">
+    <div class="form-card">
+      <div class="form-group">
+        <label>Area (Square Feet)</label>
+        <input type="text" class="area" id="uiSqft" name="Squareft" placeholder="Enter area (e.g., 1200)">
+      </div>
+
+      <div class="form-group">
+        <label>BHK</label>
+        <div class="switch-field">
+          <input type="radio" id="bhk1" name="uiBHK" value="1"><label for="bhk1">1</label>
+          <input type="radio" id="bhk2" name="uiBHK" value="2" checked><label for="bhk2">2</label>
+          <input type="radio" id="bhk3" name="uiBHK" value="3"><label for="bhk3">3</label>
+          <input type="radio" id="bhk4" name="uiBHK" value="4"><label for="bhk4">4</label>
+          <input type="radio" id="bhk5" name="uiBHK" value="5"><label for="bhk5">5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Bathrooms</label>
+        <div class="switch-field">
+          <input type="radio" id="bath1" name="uiBathrooms" value="1"><label for="bath1">1</label>
+          <input type="radio" id="bath2" name="uiBathrooms" value="2" checked><label for="bath2">2</label>
+          <input type="radio" id="bath3" name="uiBathrooms" value="3"><label for="bath3">3</label>
+          <input type="radio" id="bath4" name="uiBathrooms" value="4"><label for="bath4">4</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Location</label>
+        <select id="uiLocations">
+          <option value="" disabled selected>Loading locations...</option>
+        </select>
+      </div>
+
+      <button id="estimatePriceButton" onclick="onClickedEstimatePrice()" class="submit-btn" aria-label="Click to estimate the home price">Estimate Price</button>
+
+      <div id="uiEstimatedPrice" class="price-display">
+        <h2>Predicted Price</h2>
+        <div class="price-box">
+          
+          <span id="priceValue">--</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="news-section">
+    <div class="news-card">
+      <h2>Real Estate News & Trends</h2>
+      <div class="news-block">
+        <h3>Overview</h3>
+        <p>Bengaluru, known as the Silicon Valley of India, has a thriving real estate market. The city offers a mix of affordable housing, luxury apartments, and commercial spaces.</p>
+      </div>
+      <div class="news-block">
+        <h3>Current Trends</h3>
+        <ul>
+          <li><strong>Demand:</strong> The demand for 2BHK and 3BHK apartments is on the rise due to the influx of IT professionals.</li>
+          <li><strong>Hot Locations:</strong> Electronic City, Whitefield, and Sarjapur Road are among the most sought-after areas.</li>
+          <li><strong>Market Update:</strong> Property prices have seen a steady increase of 5-7% over the past year.</li>
+        </ul>
+      </div>
+      <div class="news-block">
+        <h3>Investment Tips</h3>
+        <p>Investing in under-construction projects in emerging areas can yield high returns. Stay updated with the latest real estate news to make informed decisions!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Link to JavaScript -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

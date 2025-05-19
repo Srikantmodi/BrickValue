@@ -1,0 +1,442 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #06146f; /* Light brownish cream color */
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .hero {
+    background-image: url('../images/home4.jpg'); /* Updated relative path to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 12px;
+    animation: slideInFromLeft 1s ease-out; /* Apply the animation */
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    max-width: 600px;
+    margin: auto;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Space between buttons */
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #007bff; /* Default button color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, filter 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .hero-btn.active {
+    background-color: #0056b3; /* Blue color for active button */
+    filter: none; /* Remove blur for active button */
+  }
+  
+  .hero-btn.blurred {
+    filter: blur(2px); /* Apply blur effect to non-active buttons */
+    pointer-events: none; /* Disable clicking on blurred buttons */
+  }
+  
+  .form-section {
+    background-color: #7ff2fafc; /* Light brownish cream color */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-card {
+    background: rgb(252, 252, 252);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border: 4px solid #000000; /* Add a blue border */
+  }
+  
+  .form-card:hover {
+    border-color: #0056b3; /* Change border color on hover */
+    transform: scale(1.02); /* Slightly enlarge the card */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Center the form group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 700; /* Make the font bold */
+    margin-bottom: 12px; /* Add space below the label */
+    color: #01284f; /* Dark blue color */
+    font-size: 20px; /* Increase font size */
+    font-family: 'Roboto', sans-serif; /* Change font to Roboto */
+    text-align: center; /* Center-align the text */
+  }
+  
+  input.area, select.location {
+    width: 85%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: #fafafa;
+  }
+  
+  .area {
+    margin-bottom: 10px; /* Add space below the input field */
+  }
+  
+  /* Style the location dropdown */
+  #uiLocations {
+    width: 80%; /* Make the dropdown wider */
+    padding: 12px; /* Add padding for a neat look */
+    font-size: 16px; /* Increase font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 20px; /* Round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    outline: none; /* Remove outline on focus */
+    transition: box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Add hover and focus effects */
+  #uiLocations:hover,
+  #uiLocations:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover/focus */
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  .switch-field {
+    display: flex;
+    justify-content: center; /* Align buttons in the center */
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .switch-field input {
+    display: none;
+  }
+  
+  .switch-field label {
+    background-color: #fff; /* Default color: white */
+    color: #333; /* Text color: dark gray */
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .switch-field input:checked + label {
+    background-color: #000; /* Selected color: black */
+    color: #fff; /* Text color: white */
+    font-weight: 600;
+  }
+  
+  .submit-btn {
+    background-color: #000; /* Changed to black */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 85%;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    display: block; /* Ensure the button behaves like a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+
+  }
+  
+  .submit-btn:hover {
+    background-color: #333; /* Slightly lighter black on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow for a popping effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #2b6cb0;
+  }
+  
+  /* Highlighting the predicted price */
+  .result h2 {
+    font-size: 2rem;
+    color: #030934;
+    font-weight: bold;
+    background-color: #1c084d;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .price-display {
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .price-display h2 {
+    font-size: 28px; /* Keep the font size */
+    font-weight: 700; /* Keep it bold */
+    color: #28a745; /* Change color to green */
+    font-family: 'Nirmala UI', sans-serif; /* Change font to Nirmala UI */
+    margin-bottom: 10px;
+    text-align: center; /* Center-align the text */
+  }
+  
+  .price-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px; /* Keep the font size */
+    font-weight: 700; /* Keep it bold */
+    background-color: #090b48; /* Keep the background color */
+    color: #e8f3f5; /* Change text color to green */
+    font-family: 'Nirmala UI', sans-serif; /* Change font to Nirmala UI */
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    min-width: 280px;
+    transition: all 0.3s ease;
+  }
+  
+  .price-box:hover {
+    transform: scale(1.03);
+  }
+  
+  .rupee-symbol {
+    font-size: 36px;
+    font-weight: 700;
+    margin-right: 5px;
+    color: #28a745; /* Changed rupee symbol color to green */
+  }
+
+  .news-section {
+    background-color: #02abff; /* Light brownish cream color */
+    padding: 50px 20px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .news-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgb(3, 12, 60);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .news-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #dfea42; /* Changed color to white */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .news-card p {
+    font-size: 16px;
+    color: #238ffc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .news-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .news-card ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .news-card ul li strong {
+    color: #2c3e50;
+  }
+
+  .news-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #eaf4c9; /* Light green block background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .news-block:hover {
+    transform: scale(1.05); /* Slightly enlarge the block */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+  }
+
+  .news-block h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #040b13;
+    margin-bottom: 10px;
+  }
+
+  .news-block p,
+  .news-block ul {
+    font-size: 16px;
+    color: #0a0303;
+    line-height: 1.6;
+  }
+
+  .news-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  .news-block ul li {
+    margin-bottom: 10px;
+  }
+
+  .news-block ul li strong {
+    color: #2c3e50;
+  }
+
+  /* Add hover effect for switch-field labels */
+  .switch-field label:hover {
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a popping effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* Add animation for sliding text */
+  @keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+
+  #home {
+    background-image: url('../images/home4.jpg'); /* Updated relative path to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevent content overflow */
+    filter: brightness(1.5); /* Increase brightness */
+  }
+  
+  #home .overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Reduce overlay darkness for better visibility */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  #home h1 {
+    font-size: 3.35rem; /* Increase font size */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for better contrast */
+    z-index: 2;
+    position: relative;
+    animation: slideInFromLeft 1s ease-out; /* Apply the slide-in animation */
+  }
+  
+  #home p {
+    font-size: 1.5rem; /* Adjust font size for better readability */
+    font-weight: bold;
+    max-width: 600px;
+    margin: auto;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for better contrast */
+    z-index: 2;
+    position: relative;
+  }
+  
+  #home .hero-buttons {
+    position: absolute; /* Position the buttons absolutely */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    z-index: 2; /* Ensure buttons are above the overlay */
+  }
+
+    
+    
+  
+
+  #news {
+    background-image: url('../images/home14.jpg'); /* Relative path to the image */
+    background-size: 150%; /* Zoom out by increasing the size percentage */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Prevent content overflow */
+    filter: brightness(1.5); /* Increase brightness for better visibility */
+}
